@@ -1,0 +1,34 @@
+# Base class
+class Device:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    
+    def device_info(self):
+        return f"{self.brand} {self.model}"
+
+
+# Derived class
+class Smartphone(Device):
+    def __init__(self, brand, model, storage, battery):
+        super().__init__(brand, model)   # Call parent constructor
+        self.storage = storage
+        self.battery = battery
+
+    def make_call(self, number):
+        return f"Calling {number}..."
+
+    def charge(self, amount):
+        self.battery += amount
+        return f"Battery charged to {self.battery}%."
+
+
+# Example usage
+phone1 = Smartphone("Samsung", "Galaxy S22", "256GB", 50)
+phone2 = Smartphone("Apple", "iPhone 14", "128GB", 80)
+
+print(phone1.device_info())     # Samsung Galaxy S22
+print(phone1.make_call("123-456-789"))
+print(phone1.charge(20))        # Battery charged to 70%
+
+print(phone2.device_info())     # Apple iPhone 14
