@@ -22,6 +22,31 @@ class Smartphone(Device):
         self.battery += amount
         return f"Battery charged to {self.battery}%."
 
+# ACTIVITY 2
+
+class Animal:
+    def move(self):
+        print("Animal is moving...")
+
+class Dog(Animal):
+    def move(self):
+        print("Running 🐕")
+
+class Bird(Animal):
+    def move(self):
+        print("Flying 🐦")
+
+class Fish(Animal):
+    def move(self):
+        print("Swimming 🐟")
+
+# Polymorphism in action
+animals = [Dog(), Bird(), Fish()]
+
+for animal in animals:
+    animal.move()
+
+
 
 # Example usage
 phone1 = Smartphone("Samsung", "Galaxy S22", "256GB", 50)
